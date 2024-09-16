@@ -1,0 +1,94 @@
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header container styling */
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Same dark background as footer */
+  padding: 15px 20px;
+  border-bottom: 2px solid #ff6600; /* Accent color for border */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the header stays on top */
+}
+
+/* Header title styling */
+.header-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f1c40f; /* Accent color for title */
+  font-family: Arial, sans-serif;
+  margin-left: 20px;
+}
+
+/* Left and right nav containers */
+.left-nav, .right-nav {
+  display: flex;
+  align-items: center;
+}
+
+.left-nav li, .right-nav li {
+  list-style-type: none;
+}
+
+/* Button styling */
+.nav-button {
+  background-color: transparent; /* Transparent background */
+  color: #f8f9fa; /* Light text */
+  border: 1px solid #ff6600; /* Accent color */
+  padding: 8px 15px;
+  margin-right: 10px; /* Space between buttons */
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #ff6600; /* Hover color */
+  color: #fff;
+}
+
+/* Active button styling */
+.nav-button.active {
+  background-color: #ff6600; /* Highlight active button */
+  color: #fff;
+}
+
+/* Adjustments to ensure no extra margins */
+.nav-menu, .nav-button {
+  margin: 0;
+}
+
+.header-title {
+  margin: 0;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .header-title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .left-nav, .right-nav {
+    flex-direction: column;
+  }
+
+  .nav-button {
+    margin-bottom: 10px;
+  }
+}

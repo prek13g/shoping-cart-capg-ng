@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\shoping_cart.props" />
+</Project>

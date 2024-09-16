@@ -1,0 +1,91 @@
+
+
+<app-header>
+</app-header>
+<div *ngIf="product && product.length > 0; else noProduct" class="container room-table" style="text-align: center;">
+    <h1 class="text-center">All Products</h1>
+    <div class="container">
+     <div class="row">
+       <div class="offset-md-4 col-md-4">
+         <button class="addp" (click)="openform()">Add Products</button>
+   </div>
+   </div>
+    </div>
+    
+     <table class="product-table">
+       <thead>
+         <tr>
+           <th>ID</th>
+           <th>Name</th>
+           <th>Image</th>
+           <th>Price</th>
+           <th>Description</th>
+           
+           <th>Category Id</th>
+           <th>Quantity</th>
+           <th>Modification</th>
+         </tr>
+       </thead>
+       <tbody class="text-center">
+         <tr *ngFor="let item of product">
+           <td>{{ item.product_id }}</td>
+           <td>{{ item.product_name }}</td>
+           <td>
+          <img src="{{item.image}}" alt="">
+        </td>
+           <td>{{ item.product_Price }}</td>
+           <td>{{ item.product_description }}</td>
+           <td>{{ item.category_id }}</td>
+           <td>{{ item.product_Quantity }}</td>
+   
+   
+           <td>
+             <button class="edit-button" (click)="openform(item)" >Edit</button>
+             <button class="btn btn-danger" (click)="deleteproduct(item.product_id)">Delete</button>
+           </td>
+         </tr>
+       </tbody>
+     </table>
+   </div>
+   
+   <!-- Template for displaying no products message -->
+   <ng-template #noProduct>
+     <p class="no-product">No products available.</p>
+</ng-template>
+   
+   
+   
+   <!-- Form for adding or editing products -->
+   <div class="form-wrapper" *ngIf="showForm">
+     <div class="product-form">
+       <h2 style="text-align: center;">{{ formHeader }}</h2>
+       <div class="group">
+         <label for="productName">Name:</label>
+         <input type="text" id="productName" class="form-control" [(ngModel)]="productName" name="name">
+       </div>
+       <div class="group">
+        <label for="productImage">Img_url:</label>
+        <input type="text" id="productImage" class="form-control" [(ngModel)]="productImage" name="image">
+      </div>
+       <div class="group">
+         <label for="productPrice">Price:</label>
+         <input type="number" id="productPrice" class="form-control" [(ngModel)]="productPrice" name="price">
+       </div>
+       <div class="group">
+         <label for="productDescription">Description:</label>
+         <input type="text" id="productDescription" class="form-control" [(ngModel)]="productDescription" name="description">
+       </div>
+       <div class="group">
+         <label for="productQuantity">Quantity:</label>
+         <input type="number" id="productQuantity" class="form-control" [(ngModel)]="productQuantity" name="quantity">
+       </div>
+       <div class="group">
+         <label for="categoryId">category_id:</label>
+         <input type="number" id="categoryId" class="form-control" [(ngModel)]="categoryId" name="categoryid">
+       </div>
+       <div class="action">
+         <button class="btn btn-primary" (click)="saveproduct()" >Save Changes</button>
+         <button class="btn btn-danger" (click)="closeform()">Cancel</button>
+       </div>
+     </div>
+   </div>

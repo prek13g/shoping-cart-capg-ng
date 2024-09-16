@@ -1,0 +1,135 @@
+/* Container for the product table */
+.container.room-table {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+  }
+  
+  /* Table styling */
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .user-table th,
+  .user-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .user-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .user-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .user-table td {
+    text-align: center;
+  }
+  
+  /* Button styles */
+  .edit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .edit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .btn.btn-danger {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 5px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn.btn-danger:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* No products message */
+  .no-user {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  .addp{
+    background-color: #007bff; /* Primary background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Padding around the text */
+    font-size: 16px; /* Font size */
+    border-radius: 4px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    outline: none; /* Remove default focus outline */
+  }
+
+
+  .form-wrapper{
+    display:flex;
+    justify-content:center ;
+    align-items: center;
+    height: 100%;
+    width:100%;
+    position  :fixed;
+    top:0;
+    left:0;
+    background-color:rgba(0, 0, 0, 0.5);
+    z-index:100;
+    
+  }
+  .user-form{
+    background-color: white;
+    width: 600px;
+    padding: 20px 50px;
+    border-radius: 5px;
+  }
+  .form-control{
+    width: 90%;
+  }
+  .group{
+    display: flex;
+    margin: 15px 0;
+  
+  }
+  .group label{
+    width: 70px;
+    line-height: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  .action{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 20px;
+  }

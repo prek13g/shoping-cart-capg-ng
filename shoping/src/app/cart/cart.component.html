@@ -1,0 +1,68 @@
+<app-header>
+</app-header>
+<h2 style="text-align: center;">YourCart</h2>
+<div *ngIf="isLoggedIn; else loginPrompt">
+<div *ngIf="carts.length > 0; else emptyCart">
+  
+<!--<h2 style="text-align: center;">YourCart</h2>-->
+
+
+<div id="total"   style="text-align: right; margin-right: 50px;">
+  <h2 >Total Amount</h2>
+  <strong>{{total_amount}} Rs</strong><br>
+  <button class="styled-button" (click)="total_cart_sending_to_payment()">Buy Now</button>
+</div>
+
+
+  
+ 
+  <div class="cart-container">
+    <div *ngFor="let cartItem of carts" class="cart-card">
+      <div class="cart-card-grid">
+        <!-- Image -->
+        <div class="cart-card-image image">
+          <img [src]="cartItem.product?.image" alt="{{ cartItem.product?.product_name }}" />
+        </div>
+        
+        <!-- Quantity Controls -->
+        <div class="cart-card-controls quantity">
+          <button class="quantity-button" (click)="decrease_quantity(cartItem)">-</button>
+          <b>{{ cartItem.quantity }}</b>
+          <button class="quantity-button" (click)="increase_quantity(cartItem)">+</button>
+        </div>
+        
+        <!-- Product Details -->
+        <div class="cart-card-details">
+          <h2>{{ cartItem.product?.product_name }}</h2>
+          <p class="price">Price: Rs {{ cartItem.product?.product_Price }}</p>
+        </div>
+        <div>
+          <button class="remove" (click)="delete_cart(cartItem.cart_id)">Remove</button>
+        </div>
+        <!-- Buy Now -->
+        <div class="cart-card-buy">
+          <p>Amount</p>
+          <b>{{ cartItem.product?.product_Price * cartItem.quantity }}</b>
+          <button class="buy-now-button" (click)="sending_into_payment(cartItem.cart_id)" >Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #emptyCart>
+  <div class="empty-cart">
+    <p>Your cart is currently empty.</p>
+    <a class="continue-shopping-button" routerLink="">Continue Shopping</a>
+  </div>
+</ng-template>
+</div>
+<ng-template #loginPrompt>
+  <div class="login-prompt">
+<p>Login Required to go your cart</p>
+
+<button class="signin-button" (click)="signin_page()">Sign In</button>
+
+      
+      </div>
+    </ng-template>

@@ -1,0 +1,39 @@
+<app-header>
+</app-header>
+<div style="margin-top: 80px;"></div>
+<div *ngIf="product; else loading" class="product-details">
+    <h1>Product Details</h1>
+    <div class="product-content">
+      <div class="product-image-container">
+        <img [src]="product.image" alt="{{ product.product_name }}" class="product-image"/>
+      </div>
+      <div class="product-info">
+        <strong>Product Name:</strong><b>{{ product.product_name }}</b>
+        <p><strong>Price:</strong> Rs {{ product.product_Price }}</p>
+        <p><strong>Description:</strong> {{ product.product_description }}</p>
+        
+        <p><strong>Left:</strong> {{ product.product_Quantity }}</p>
+         <!-- Quantity control -->
+         <p>
+            <strong>Quantity:</strong>
+            <button class="decrease-button" (click)="decreaseQuantity()">-</button>
+            <span>{{ quantity }}</span>
+            <button class="increase-button" (click)="increaseQuantity()">+</button>
+          </p>
+          
+
+        <hr>
+        <div class="button-group">
+          <button class="add-to-cart-button" (click)="addToCart(product.product_id)">Add to Cart</button>
+          <button class="buy-now-button" (click)="buyNow(userId, product.product_id, quantity)">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <div class="loading-container">
+      <p>Loading product details...</p>
+    </div>
+  </ng-template>
+  

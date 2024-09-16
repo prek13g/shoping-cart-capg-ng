@@ -1,0 +1,157 @@
+/* General footer styling */
+.footer {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Ensure html and body take full height of the viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Wrapper to handle content and footer positioning */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Content will grow to fill the remaining space */
+.content {
+  flex: 1;
+}
+
+.btn{
+  background-color: transparent; /* Transparent background */
+  color: #f8f9fa; /* Light text for contrast */
+  border: 1px solid #ff6600; /* Border matches the accent color */
+  padding: 10px 15px;
+  margin-right: 10px; /* Adds space between buttons */
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth hover transition */
+}
+.btn-active{
+  background-color: #ff6600; /* Highlight active button */
+  color: #fff;
+  border-color: #ff6600;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #212529; /* Dark background for a modern look */
+  color: #f8f9fa; /* Light text for contrast */
+  text-align: center;
+  padding: 20px 0; /* Adds padding for a balanced layout */
+  border-top: 2px solid #ff6600; /* Accent color for a professional touch */
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2); /* Floating shadow effect */
+  position: fixed; /* Sticks to the bottom */
+  bottom: 0;
+  left: 0; /* Aligns to the left edge */
+  width: 100%; /* Ensure full width */
+  margin: 0; /* Removes any unwanted margin */
+}
+
+/* Footer bottom styling */
+.footer-bottom {
+  max-width: 1200px; /* Restrict width for a cleaner look */
+  margin: 0 auto; /* Center content */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Text styling */
+.footer-bottom p {
+  margin: 0;
+  color: #f8f9fa; /* Text color */
+}
+
+/* Links in the footer */
+.footer-bottom a {
+  color: #ff6600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #f8f9fa; /* Text color on hover */
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .footer {
+      padding: 15px 0;
+  }
+
+  .footer-bottom {
+      font-size: 14px;
+  }
+}
+
+/* Footer container for sections */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Ensures no gap on sides */
+}
+
+/* Footer section styling */
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 20px;
+}
+
+.footer-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #f1c40f; /* Accent color for headings */
+}
+
+.footer-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 10px;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+/* Social icon styling */
+.footer-section .social-icon {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #444; /* Dark background for social icons */
+  color: #f1c40f; /* Accent color for social icons */
+}
+
+.footer-section .social-icon:hover {
+  background-color: #555; /* Slightly lighter background on hover */
+  color: #fff; /* White color on hover */
+}
+
+/* Footer bottom small text */
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #ccc; /* Light text color for copyright */
+}

@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+/* Add to globally apply overflow handling */
+* {
+    overflow-x: hidden; /* Hide horizontal scrollbar globally */
+    overflow-y: auto; /* Vertical scrollbar only if necessary */
+  }
+  

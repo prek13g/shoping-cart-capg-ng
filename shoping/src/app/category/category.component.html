@@ -1,0 +1,53 @@
+<app-header>
+</app-header>
+<div *ngIf="categorys && categorys.length > 0; else nocategorys" class="container room-table" style="text-align: center;">
+<h1 class="text-center">All Categorys</h1>
+<div class="container">
+    <div class="row">
+      <div class="offset-md-4 col-md-4">
+        <button class="addp" (click)="openform()">Add Category</button>
+  </div>
+  </div>
+   </div>
+   <table class="category-table">
+    <thead>
+      <tr>
+        <th>Category_ID</th>
+        <th>Category_Name</th>
+        <th>Modification</th>
+        
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let item of categorys">
+        <td>{{ item.category_id }}</td>
+        <td>{{ item.category_name}}</td>
+        
+
+
+        <td>
+          <button class="edit-button" (click)="openform(item)" >Edit</button>
+          <button class="btn btn-danger" (click)="deletecategory(item.category_id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #nocategorys>
+    <p class="no-product">No Categorys available.</p>
+  </ng-template>
+
+
+  <div class="form-wrapper" *ngIf="showForm">
+    <div class="category-form">
+      <h2 style="text-align: center;">{{ formHeader }}</h2>
+      <div class="group">
+        <label for="categoryName">Name:</label>
+        <input type="text" id="categoryName" class="form-control" [(ngModel)]="categoryName" name="name">
+      </div>
+      <div class="action">
+        <button class="btn btn-primary" (click)="savecategory()" >Save Changes</button>
+        <button class="btn btn-danger" (click)="closeform()" >Cancel</button>
+      </div>
+    </div>
+</div>

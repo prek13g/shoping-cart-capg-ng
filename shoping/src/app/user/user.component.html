@@ -1,0 +1,74 @@
+<app-header>
+</app-header>
+<div *ngIf="user && user.length > 0; else noUser" class="container room-table" style="text-align: center;">
+    <h1 class="text-center">All Users</h1>
+    <div class="container">
+     <div class="row">
+       <div class="offset-md-4 col-md-4">
+         <button class="addp" (click)="openform()" >Add User</button>
+   </div>
+   </div>
+    </div>
+    
+     <table class="user-table">
+       <thead>
+         <tr>
+           <th>ID</th>
+           <th>Name</th>
+           <th>Email</th>
+           <th>Password</th>
+           <th>Modification</th>
+         </tr>
+       </thead>
+       <tbody class="text-center">
+         <tr *ngFor="let item of user">
+           <td>{{ item.user_id }}</td>
+           <td>{{ item.user_name }}</td>
+           <td>{{ item.user_email }}</td>
+           <td>{{ item.password }}</td>
+           
+   
+   
+           <td>
+             <button class="edit-button" (click)="openform(item)" >Edit</button>
+             <button class="btn btn-danger"(click)="deleteuser(item.user_id)" >Delete</button>
+           </td>
+         </tr>
+       </tbody>
+     </table>
+   </div>
+   
+   <!-- Template for displaying no products message -->
+   <ng-template #noUser>
+     <p class="no-user">No Users available.</p>
+   </ng-template>
+
+   
+   
+<!-- Form for adding or editing products -->
+<div class="form-wrapper" *ngIf="showForm">
+    <div class="user-form">
+      <h2 style="text-align: center;">{{ formHeader }}</h2>
+      <div class="group">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" class="form-control" [(ngModel)]="userName" name="name">
+      </div>
+      <div class="group">
+        <label for="userEmail">Email:</label>
+        <input type="text" id="userEmail" class="form-control" [(ngModel)]="userEmail" name="email">
+      </div>
+      <div class="group">
+        <label for="Password">Password:</label>
+        <input type="text" id="Password" class="form-control" [(ngModel)]="Password" name="password">
+      </div>
+      
+      
+      <div class="action">
+        <button class="btn btn-primary" (click)="saveuser()">Save Changes</button>
+        <button class="btn btn-danger" (click)="closeform()">Cancel</button>
+      </div>
+    </div>
+  </div>
+   
+
+
